@@ -13,7 +13,8 @@ export default function RestaurantDetailScreen ({ route }) {
   useEffect(() => {
     console.log('Loading restaurant details, please wait 1 second')
     setTimeout(() => {
-      setRestaurant(getDetail(route.params.id))
+      const detail = getDetail(route.params.id)
+      setRestaurant(detail)
       console.log('Restaurant details loaded')
     }, 1000)
   }, [])
@@ -95,5 +96,5 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     marginRight: 5,
     color: GlobalStyles.brandSecondary
-  },
+  }
 })
